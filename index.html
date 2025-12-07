@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vida Ágil Distribuidora | Produtos Digitais e Físicos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vida Ágil Distribuidora. Produtos digitais profissionais e produtos físicos de alta qualidade com atendimento humanizado e rápido." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #4f46e5, #020617 60%);
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(from 140deg, #22d3ee, #a855f7, #facc15, #22d3ee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(250, 204, 21, 0.8);
+    }
+
+    .brand-logo span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #020617;
+      text-shadow: 0 0 10px rgba(15, 23, 42, 0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text strong {
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-text small {
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .nav-cta a {
+      font-size: 0.85rem;
+    }
+
+    .btn-outline {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+    }
+
+    .btn-primary {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #a855f7, #22d3ee);
+      color: #020617;
+      font-weight: 700;
+      box-shadow: 0 0 18px rgba(59, 130, 246, 0.8);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary span {
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #bfdbfe;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 28px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #facc15, #22d3ee, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.28), rgba(15, 23, 42, 0.85));
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      max-width: 19rem;
+    }
+
+    .hero-note strong {
+      color: #facc15;
+    }
+
+    .hero-media {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-orb {
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0, #22d3ee, transparent 55%), radial-gradient(circle at 80% 100%, #a855f7, transparent 55%), radial-gradient(circle at 50% 40%, #facc15, transparent 60%);
+      box-shadow: 0 0 60px rgba(129, 140, 248, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card {
+      width: 82%;
+      border-radius: 1.5rem;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero-chip {
+      font-size: 0.7rem;
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, rgba(132, 204, 22, 0.7), rgba(21, 128, 61, 0.8));
+      color: #022c22;
+      font-weight: 700;
+    }
+
+    .hero-card-body {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-tag {
+      font-size: 0.7rem;
+      padding: 0.16rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.14);
+      pointer-events: none;
+    }
+
+    section {
+      padding: 2rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      max-width: 40rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border-radius: 1.1rem;
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.35), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      padding: 1rem 1.1rem;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a5b4fc;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-text {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      margin-bottom: 0.6rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .section-cta {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .section-cta p {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .highlight {
+      color: #facc15;
+      font-weight: 600;
+    }
+
+    .cta-block {
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(191, 219, 254, 0.5);
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .cta-block-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .cta-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .cta-text {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      max-width: 32rem;
+    }
+
+    .cta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .cta-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .cta-small {
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    footer {
+      border-top: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 1.5rem 1.25rem 2rem;
+      background: rgba(3, 7, 18, 0.96);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .footer-inner span strong {
+      color: #e5e7eb;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: #e5e7eb;
+      font-size: 0.78rem;
+    }
+
+    .footer-tag {
+      font-size: 0.75rem;
+      padding: 0.24rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.5rem;
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-orb {
+        width: 260px;
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="brand-logo">
+            <span>VA</span>
+          </div>
+          <div class="brand-text">
+            <strong>Vida Ágil Distribuidora</strong>
+            <small>Digital e físico com atenção real 💛</small>
+          </div>
+        </div>
+        <div class="nav-cta">
+          <a class="btn-outline" href="#produtos-digitais">Produtos digitais</a>
+          <a class="btn-outline" href="#produtos-fisicos">Produtos físicos</a>
+          <a class="btn-primary" href="https://wa.me/5538988158948" target="_blank" rel="noopener">
+            <span>Falar com a equipe agora</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="hero-kicker">
+            hub digital e físico
+          </div>
+          <h1 class="hero-title">
+            Sua distribuidora completa em produtos digitais e físicos com atendimento humanizado
+            <span>Vida Ágil Distribuidora</span>
+          </h1>
+          <p class="hero-subtitle">
+            Ferramentas digitais profissionais para impulsionar o seu trabalho e produtos físicos de alta qualidade.
+            Atendimento próximo, suporte real e soluções pensadas para o seu dia a dia.
+          </p>
+
+          <div class="hero-badges">
+            <div class="badge">Produtos digitais com acesso imediato</div>
+            <div class="badge">Produtos físicos com marcas confiáveis</div>
+            <div class="badge">Atendimento individual e respeitoso</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/5538988158948" target="_blank" rel="noopener">
+              <span>Quero comprar agora</span>
+            </a>
+            <a class="btn-outline" href="#como-funciona">
+              Entender como funciona
+            </a>
+            <p class="hero-note">
+              <strong>Importante:</strong> leia sempre todas as informações antes de finalizar a compra. Em caso de dúvida, fale com nossa equipe.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-orb">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div class="hero-card-title">
+                  Hub Vida Ágil digital
+                </div>
+                <div class="hero-chip">
+                  login individual
+                </div>
+              </div>
+              <div class="hero-card-body">
+                Acesso profissional a ferramentas digitais com suporte próximo, linguagem simples e foco em resultado.
+              </div>
+              <div class="hero-card-tags">
+                <span class="hero-card-tag">Canva Pro</span>
+                <span class="hero-card-tag">CapCut Pro</span>
+                <span class="hero-card-tag">ChatGPT Plus</span>
+                <span class="hero-card-tag">YouTube Premium</span>
+                <span class="hero-card-tag">GoldCard TV</span>
+              </div>
+              <div class="hero-card-footer">
+                <span>Atendimento digital dedicado</span>
+                <span>Vida Ágil Distribuidora 💛</span>
+              </div>
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos-digitais">
+        <div class="section-inner">
+          <div class="section-kicker">
+            produtos digitais
+          </div>
+          <h2 class="section-title">Ferramentas digitais para impulsionar a sua rotina</h2>
+          <p class="section-subtitle">
+            Trabalhamos com produtos digitais originais, ativados para o seu uso individual.
+            Ideais para quem cria conteúdo, estuda, empreende ou deseja mais praticidade no dia a dia.
+          </p>
+
+          <div class="grid grid-3">
+            <div class="card">
+              <div class="card-label">criação e design</div>
+              <div class="card-title">Canva Pro</div>
+              <p class="card-text">
+                Ferramenta de design profissional com modelos prontos, ideal para redes sociais, materiais de estudo e apresentação de projetos.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Design profissional</span>
+                <span class="pill">Modelos prontos</span>
+                <span class="pill">Uso para estudo e trabalho</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">edição de vídeo</div>
+              <div class="card-title">CapCut Pro</div>
+              <p class="card-text">
+                Edição de vídeo prática com recursos avançados para criadores de conteúdo.
+                Produza vídeos com estética profissional com mais facilidade.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Edição ágil</span>
+                <span class="pill">Efeitos modernos</span>
+                <span class="pill">Conteúdo para redes sociais</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">inteligência artificial</div>
+              <div class="card-title">ChatGPT Plus e GPT personalizado</div>
+              <p class="card-text">
+                Inteligência artificial para organizar estudos, estruturar projetos, criar materiais e automatizar parte do seu trabalho com texto, imagem e vídeo.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Estudo guiado</span>
+                <span class="pill">Criação de materiais</span>
+                <span class="pill">Apoio no dia a dia</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">entretenimento</div>
+              <div class="card-title">GoldCard TV</div>
+              <p class="card-text">
+                Acesso a conteúdo de entretenimento para sua família com praticidade.
+                Ideal para momentos de descanso e lazer.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Conteúdo variado</span>
+                <span class="pill">Uso em casa</span>
+                <span class="pill">Conforto para a família</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">música e vídeos</div>
+              <div class="card-title">YouTube Premium e Spotify</div>
+              <p class="card-text">
+                Soluções para ouvir música, assistir vídeos, estudar e consumir conteúdo sem anúncios, com mais foco e conforto.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Sem interrupção</span>
+                <span class="pill">Melhor experiência</span>
+                <span class="pill">Uso em estudo e lazer</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">apoio completo</div>
+              <div class="card-title">Atendimento Vida Ágil digital</div>
+              <p class="card-text">
+                Orientamos o uso das ferramentas e mantemos um canal de suporte respeitoso
+                para tirar dúvidas sobre acesso e funcionamento dos produtos digitais.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Suporte individual</span>
+                <span class="pill">Comunicação clara</span>
+                <span class="pill">Cuidado com o cliente</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <a class="btn-primary" href="https://wa.me/5538988158948" target="_blank" rel="noopener">
+              <span>Quero saber mais sobre os produtos digitais</span>
+            </a>
+            <p>
+              Nossa equipe explica o que se encaixa melhor na sua necessidade com calma e respeito.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos-fisicos">
+        <div class="section-inner">
+          <div class="section-kicker">
+            produtos físicos
+          </div>
+          <h2 class="section-title">Produtos físicos com foco em qualidade e confiança</h2>
+          <p class="section-subtitle">
+            Atuamos com produtos físicos de alta qualidade, incluindo insumos para saúde.
+            Buscamos sempre marcas confiáveis e condições acessíveis por meio de parcerias estratégicas.
+          </p>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="card-label">saúde e cuidado</div>
+              <div class="card-title">Insumos de saúde</div>
+              <p class="card-text">
+                Máscaras, seringas, luvas e outros materiais de uso profissional e pessoal.
+                Sempre com foco em segurança e seriedade na escolha das marcas.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Cuidado com a saúde</span>
+                <span class="pill">Materiais selecionados</span>
+                <span class="pill">Parceria com grandes marcas</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">busca inteligente</div>
+              <div class="card-title">Produtos sob demanda</div>
+              <p class="card-text">
+                A partir da necessidade do cliente, buscamos produtos específicos com apoio de parceiros como Mercado Livre,
+                sempre avaliando custo benefício e cupom disponível.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Pesquisa para o cliente</span>
+                <span class="pill">Melhor custo benefício</span>
+                <span class="pill">Seleção personalizada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <a class="btn-primary" href="https://wa.me/5538988158948" target="_blank" rel="noopener">
+              <span>Quero pedir um produto físico</span>
+            </a>
+            <p>
+              Descreva sua necessidade e nossa equipe pesquisa opções, marcas e valores para você com transparência.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="como-funciona">
+        <div class="section-inner">
+          <div class="section-kicker">
+            como funciona
+          </div>
+          <h2 class="section-title">Como a Vida Ágil Distribuidora cuida das suas compras</h2>
+          <p class="section-subtitle">
+            Trabalhamos com organização, respeito e transparência em cada etapa.
+            Queremos que você se sinta segura em cada decisão.
+          </p>
+
+          <div class="cta-block">
+            <div class="cta-block-main">
+              <div class="cta-title">Passo a passo do atendimento Vida Ágil</div>
+              <p class="cta-text">
+                Primeiro ouvimos a sua necessidade.
+                Em seguida indicamos o produto mais adequado, explicamos o funcionamento, forma de acesso e prazos.
+                Para produtos digitais, o acesso é enviado após a confirmação do pagamento.
+                Para produtos físicos, alinhamos prazo e condições de envio.
+              </p>
+              <div class="cta-badges">
+                <span class="cta-badge">Orientação personalizada</span>
+                <span class="cta-badge">Informações claras</span>
+                <span class="cta-badge">Atenção ao cliente</span>
+              </div>
+            </div>
+            <div class="cta-actions">
+              <a class="btn-primary" href="https://wa.me/5538988158948" target="_blank" rel="noopener">
+                <span>Falar com a Vida Ágil Distribuidora</span>
+              </a>
+              <p class="cta-small">
+                Em caso de dúvida, peça para nossa equipe explicar todos os detalhes antes da compra.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>
+          <strong>Vida Ágil Distribuidora</strong> · Hub digital e físico · Atendimento com respeito e responsabilidade 💛
+        </span>
+        <div class="footer-links">
+          <span class="footer-tag">Contato principal WhatsApp: (38) 98815 8948</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
